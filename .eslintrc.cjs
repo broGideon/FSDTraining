@@ -33,6 +33,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'react/prop-types': 'off',
     '@next/next/no-html-link-for-pages': 'off',
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     'react-hooks/rules-of-hooks': 'error',

@@ -17,3 +17,5 @@ export const RouterPath: Record<AppRoutes, string> = {
   [AppRoutes.MANAGER]: '/manager',
   [AppRoutes.ADMIN]: '/admin',
 }
+
+export const BASE_URL = 'https://sbgsrnr.zapto.org/api/v2/'
