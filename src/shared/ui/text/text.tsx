@@ -8,7 +8,7 @@ interface Props {
   children: ReactNode | ReactNode[]
 }
 
-export const Subtitle: React.FC<Props> = ({
+export const Text: React.FC<Props> = ({
   weight = 'normal',
   color = 'primary',
   className = '',

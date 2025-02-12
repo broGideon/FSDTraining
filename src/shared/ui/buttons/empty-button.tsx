@@ -19,7 +19,7 @@ export const EmptyButton: React.FC<Props> = ({
 }) => {
   return (
     <button
-      className={`${fullWidth ? 'w-full' : 'w-fit'} border-2 border-${color}-700 text-white text-${weight}`}
+      className={`${fullWidth ? 'w-full' : 'w-fit'} border-2 bg-transparent border-${color}-700 text-white text-${weight}`}
       {...rest}
     >
       {children}

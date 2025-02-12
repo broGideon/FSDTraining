@@ -1,1 +1,6 @@
 export { Modal } from './modal/modal'
+export { Text } from './text/text'
+export { Subtitle } from './text/subtitle'
+export { Title } from './text/title'
+export { Button } from './buttons/button'
+export { EmptyButton } from './buttons/empty-button'
