@@ -15,5 +15,5 @@ export const RouterPath: Record<AppRoutes, string> = {
   [AppRoutes.FAVORITE]: '/favorite',
   [AppRoutes.USER]: '/user',
   [AppRoutes.MANAGER]: '/manager',
-  [AppRoutes.ADMIN]: '/admin'
+  [AppRoutes.ADMIN]: '/admin',
 }
