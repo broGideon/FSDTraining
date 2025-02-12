@@ -1,16 +1,20 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: {
+          foreground: 'rgba(var(--primary-foreground), <alpha-value>)',
+          background: 'rgba(var(--primary-background), <alpha-value>)',
+        },
+        secondary: {
+          foreground: 'rgba(var(--secondary-foreground), <alpha-value>)',
+          background: 'rgba(var(--secondary-background), <alpha-value>)',
+        },
+        ternary: 'rgba(var(--ternary), <alpha-value>)',
       },
     },
   },
