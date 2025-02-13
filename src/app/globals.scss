@@ -3,22 +3,63 @@
 @tailwind utilities;
 
 :root, [data-bs-theme="light"] {
-  --background-primary: #E8EBF4;
-  --background-secondary: #FFFFFF;
-  --foreground-primary: #000000;
-  --foreground-secondary: #676767;
+  --primary-background: 232,235,244;
+  --secondary-background: 255, 255, 255;
+  --primary-foreground: 0, 0, 0;
+  --secondary-foreground: 103,103,103;
 }
 
 [data-bs-theme="dark"] {
-  --background-primary: #2A2E44;
-  --background-secondary: #363B4F;
-  --foreground-primary: #EAEAEA;
-  --foreground-secondary: #8D8D8D;
+  --primary-background: 42,46,68;
+  --secondary-background: 54,59,79;
+  --primary-foreground: 234,234,234;
+  --secondary-foreground: 141,141,141;
 }
 
 
 body {
-  background: var(--background-primary);
+  background: rgb(var(--primary-background));
   font-family: Arial, Helvetica, sans-serif;
-  @apply w-screen h-screen;
+  @apply w-screen min-h-screen flex flex-col;
+}
+
+.fontWeight-extralight {
+  @apply font-extralight;
+}
+
+.fontWeight-light {
+  @apply font-light;
+}
+
+.fontWeight-normal {
+  @apply font-normal;
+}
+
+.fontWeight-medium {
+  @apply font-medium;
+}
+
+.fontWeight-semibold {
+  @apply font-semibold;
+}
+
+.fontWeight-bold {
+  @apply font-bold;
+}
+
+.fontWeight-extrabold {
+  @apply font-extrabold;
+}
+
+.fontWeight-black {
+  @apply font-black;
+}
+
+.textColor-primary {
+  @apply text-primary-foreground;
+}
+
+
+.textColor-secondary {
+  @apply text-secondary-foreground;
 }

@@ -1,12 +1,20 @@
 import type { Metadata } from 'next'
 import './globals.scss'
-import { Header } from '@/widgets/header/ui/Header'
+import { Rubik } from 'next/font/google'
+import { Header } from '@/widgets/header/ui/header'
 import { Footer } from '@/widgets/footer/ui/footer'
 
 export const metadata: Metadata = {
   title: 'Sofas',
   description: 'Shop in sofas',
 }
+
+const rubik = Rubik({
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  subsets: ['latin', 'cyrillic'],
+  variable: '--font-rubik',
+})
 
 export default function RootLayout({
   children,
@@ -15,9 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={rubik.className}>
         <Header />
-        {children}
+        <main className="flex-grow container mx-auto">{children}</main>
         <Footer />
       </body>
     </html>
