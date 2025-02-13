@@ -6,7 +6,5 @@ export const generateStaticParams = async () => {
     (res) => res.json(),
   )
 
-  return products.map((product: Product) => ({
-    id: String(product.idProduct),
-  }))
+  return products
 }

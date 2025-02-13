@@ -15,9 +15,9 @@ export const ProductCart: React.FC<Props> = ({
   priceProduct,
 }) => {
   return (
-    <div className="mb-2 w-1/3">
+    <div className="w-[32%]">
       <div className="border-2 rounded-md border-secondary-foreground bg-secondary-background p-4">
-        <img className="object-cover" src={imageUrl} />
+        <img className="object-cover w-full h-96" src={imageUrl} />
         <div className="card-body">
           <Subtitle>{nameProduct}</Subtitle>
           <Text>{priceProduct} руб</Text>

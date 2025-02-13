@@ -1,14 +1,20 @@
-import { ProductCart } from '@/entities/product'
+import { Product, ProductCart } from '@/entities/product'
+import React from 'react'
 
-export const MainPage = () => {
+export const MainPage: React.FC<{ products: Product[] }> = ({ products }) => {
   return (
     <>
-      <ProductCart
-        id={1}
-        imageUrl="https://gitlab.com/broGideon/aspnetsite/-/raw/main/WebApplication1/wwwroot/images/img_1.png?ref_type=heads"
-        nameProduct="Угловой диван"
-        priceProduct={129999.0}
-      />
+      <div className="flex gap-4 py-4 justify-center flex-wrap">
+        {products.map((product: Product) => (
+          <ProductCart
+            key={product.idProduct}
+            id={product.idProduct}
+            imageUrl={product.image.url}
+            nameProduct={product.productName}
+            priceProduct={product.productPrice}
+          />
+        ))}
+      </div>
     </>
   )
 }
