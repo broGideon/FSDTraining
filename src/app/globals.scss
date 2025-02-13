@@ -63,3 +63,19 @@ body {
 .textColor-secondary {
   @apply text-secondary-foreground;
 }
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
