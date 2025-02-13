@@ -16,7 +16,7 @@ export const Subtitle: React.FC<Props> = ({
 }) => {
   return (
     <h2
-      className={`${className} font-${weight} text-${color}-foreground text-xl lg:text-base`}
+      className={`${className} fontWeight-${weight} textColor-${color} text-base lg:text-xl`}
     >
       {children}
     </h2>

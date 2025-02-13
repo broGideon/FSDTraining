@@ -16,7 +16,7 @@ export const Title: React.FC<Props> = ({
 }) => {
   return (
     <h1
-      className={`${className} font-${weight} text-${color}-foreground text-[1.5rem] lg:text-xl`}
+      className={`${className} fontWeight-${weight} textColor-${color} text-xl lg:text-[1.5rem]`}
     >
       {children}
     </h1>

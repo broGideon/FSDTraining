@@ -5,11 +5,7 @@ interface Props {
   className?: string
   children: React.ReactNode
 }
-export const Modal: React.FC<Props> = ({
-  onClose,
-  className,
-  children
-}) => {
+export const Modal: React.FC<Props> = ({ onClose, className, children }) => {
   return (
     <dialog
       className="fixed top-0 right-0 bottom-0 left-0 flex h-full w-full cursor-pointer items-center justify-center blur bg-black/15"

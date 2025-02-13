@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={rubik.className}>
         <Header />
-        <main className="flex-grow container mx-auto">{children}</main>
+        <main className="container mx-auto flex-grow">{children}</main>
         <Footer />
       </body>
     </html>

@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <header className="bg-secondary-background">
       <Container>
-        <div className="flex justify-between items-center w-full my-2">
+        <div className="my-2 flex w-full items-center justify-between">
           <nav>
             <CustomLink
               href="/"

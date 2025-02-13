@@ -1,7 +1,8 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react'
 import { Weight } from '@/shared/ui/types'
+import './button.scss'
 
-type Color = 'blue' | 'green' | 'red'
+type Color = 'blue' | 'green' | 'red' | 'none'
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   weight?: Weight
@@ -19,7 +20,7 @@ export const EmptyButton: React.FC<Props> = ({
 }) => {
   return (
     <button
-      className={`${fullWidth ? 'w-full' : 'w-fit'} border-2 bg-transparent border-${color}-700 text-white text-${weight}`}
+      className={`${fullWidth ? 'w-full' : 'w-fit'} border-2 py-1.5 px-3 rounded-md bg-transparent buttonBorder-${color} text-primary-foreground fontWeight-${weight}`}
       {...rest}
     >
       {children}
