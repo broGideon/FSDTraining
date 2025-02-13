@@ -7,6 +7,7 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   color?: 'primary' | 'secondary'
   className?: string
   underline?: boolean
+  textAlignment?: 'left' | 'center' | 'right' | 'justify'
   href: string
   children: ReactNode | ReactNode[]
 }
@@ -16,6 +17,7 @@ export const CustomLink: React.FC<Props> = ({
   color = 'primary',
   className = '',
   underline = false,
+  textAlignment = 'left',
   children,
   href,
   ...rest
@@ -23,7 +25,7 @@ export const CustomLink: React.FC<Props> = ({
   return (
     <Link
       href={href}
-      className={`${className} p-2 inline-block fontWeight-${weight} textColor-${color} text-center ${underline ? 'underline' : ''} text-sm lg:text-base`}
+      className={`${className} p-2 inline-block fontWeight-${weight} textColor-${color} text-center ${underline ? 'underline' : ''} text-${textAlignment} text-sm lg:text-base`}
       {...rest}
     >
       {children}

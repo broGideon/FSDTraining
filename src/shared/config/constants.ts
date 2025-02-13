@@ -18,4 +18,6 @@ export const RouterPath: Record<AppRoutes, string> = {
   [AppRoutes.ADMIN]: '/admin',
 }
 
-export const BASE_URL = 'https://sbgsrnr.zapto.org/api/v2/'
+export const BASE_API_URL = 'https://sbgsrnr.zapto.org/api/v2'
+
+export const REVALIDATE_TIME = 60 * 60

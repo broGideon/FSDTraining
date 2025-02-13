@@ -18,7 +18,7 @@ export const Text: React.FC<Props> = ({
 }) => {
   return (
     <p
-      className={`${className} fontWeight-${weight} text-${textAlignment} textColor-${color} text-base lg:text-sm`}
+      className={`${className} fontWeight-${weight} text-${textAlignment} textColor-${color} text-sm lg:text-base`}
     >
       {children}
     </p>

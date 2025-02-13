@@ -1,11 +1,11 @@
 import React from 'react'
-import { Button, CustomLink, EmptyButton, LikeIcon } from '@/shared/ui'
+import { Button, CustomLink, EmptyButton, LikeIcon, Subtitle, Text } from '@/shared/ui'
 
 interface Props {
   id: number
   imageUrl: string
   nameProduct: string
-  priceProduct: string
+  priceProduct: number
 }
 
 export const ProductCart: React.FC<Props> = ({
@@ -15,24 +15,26 @@ export const ProductCart: React.FC<Props> = ({
   priceProduct,
 }) => {
   return (
-    <div className="col-md-4 mb-2">
-      <div className="card">
-        <img className="card-img-top" src={imageUrl} />
+    <div className="mb-2 w-1/3">
+      <div className="border-2 rounded-md border-secondary-foreground bg-secondary-background p-4">
+        <img className="object-cover" src={imageUrl} />
         <div className="card-body">
-          <div className="card-title h5 primary-color">{nameProduct}</div>
-          <p className="card-text secondary-color">{priceProduct} руб</p>
-          <div className="flex flex-column w-fit">
-            <div>
-              <Button>
-                Добавить
-              </Button>
-              <EmptyButton className="mr-2">
-                <LikeIcon />
-              </EmptyButton>
-            </div>
+          <Subtitle>{nameProduct}</Subtitle>
+          <Text>{priceProduct} руб</Text>
+          <div className="flex w-fit items-center">
+            <Button>Добавить</Button>
+            <EmptyButton>
+              <LikeIcon />
+            </EmptyButton>
           </div>
           <br />
-          <CustomLink href={`/products/${id}`} color="secondary">
+          <CustomLink
+            className="w-full"
+            href={`/products/${id}`}
+            color="secondary"
+            underline
+            textAlignment="center"
+          >
             О товаре
           </CustomLink>
         </div>
