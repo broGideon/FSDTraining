@@ -1,4 +1,3 @@
-import { BASE_API_URL } from '@/shared/config'
 import { Rating } from '@/entities/rating'
 
 export const postRating = async (
@@ -6,10 +5,12 @@ export const postRating = async (
   rating: number,
   comment?: string,
 ): Promise<Rating> => {
-  const response = await fetch(`${BASE_API_URL}/rating`, {
+  const response = await fetch(`/api/proxy/rating`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ productId, rating, comment }),
   })
+  if (!response.ok) {
+    throw new Error(response.statusText)
+  }
   return await response.json()
 }

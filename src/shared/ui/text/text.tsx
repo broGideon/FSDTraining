@@ -3,7 +3,7 @@ import { Weight } from '@/shared/ui/types'
 
 interface Props {
   weight?: Weight
-  color?: 'primary' | 'secondary'
+  color?: 'primary' | 'secondary' | 'danger'
   className?: string
   textAlignment?: 'left' | 'center' | 'right' | 'justify'
   children: ReactNode | ReactNode[]

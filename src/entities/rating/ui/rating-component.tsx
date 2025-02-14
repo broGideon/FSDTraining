@@ -1,7 +1,12 @@
 'use client'
 
 import React, { useCallback, useEffect, useState } from 'react'
-import { getRatingByProduct, Rating, RatingForm, RatingList } from '@/entities/rating'
+import {
+  getRatingByProduct,
+  Rating,
+  RatingForm,
+  RatingList,
+} from '@/entities/rating'
 
 interface Props {
   productId: number

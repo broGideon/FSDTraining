@@ -26,7 +26,7 @@ export const RatingForm: React.FC<Props> = ({ addRating, productId }) => {
   }
 
   return (
-    <div className="rounded-lg bg-primary-background p-4 shadow-lg">
+    <div className="rounded-lg bg-secondary-background p-4 shadow-lg">
       <Subtitle className="mb-3">Оставьте отзыв</Subtitle>
       <form
         onSubmit={(e) => {
@@ -62,7 +62,7 @@ export const RatingForm: React.FC<Props> = ({ addRating, productId }) => {
             rows={4}
           />
         </div>
-        {error && <Text className="text-red-500 mt-2">{error}</Text>}
+        {error && <Text color="danger" className="my-2">{error}</Text>}
         <Button onClick={handleSubmit}>Отправить отзыв</Button>
       </form>
     </div>

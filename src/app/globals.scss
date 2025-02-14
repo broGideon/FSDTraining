@@ -64,6 +64,10 @@ body {
   @apply text-secondary-foreground;
 }
 
+.textColor-danger {
+  @apply text-red-600;
+}
+
 .text-center {
   text-align: center;
 }
