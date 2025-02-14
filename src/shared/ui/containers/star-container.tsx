@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const StarContainer: React.FC<Props> = ({ rating, maxStars = 5 }) => {
-  const fullStars = 4
+  const fullStars = Math.floor(rating)
   const hasHalfStar = rating % 1
   const emptyStars = maxStars - fullStars - (hasHalfStar ? 1 : 0)
   return (

@@ -2,6 +2,9 @@ import React, { ReactNode } from 'react'
 import { Weight } from '@/shared/ui/types'
 
 interface Props {
+  /**
+   * Важность текста (например, легкий, средний или жирный).
+   */
   weight?: Weight
   color?: 'primary' | 'secondary'
   className?: string
