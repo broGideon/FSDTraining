@@ -3,7 +3,8 @@ import {
   Button,
   CustomLink,
   EmptyButton,
-  LikeIcon, StarContainer,
+  LikeIcon,
+  StarContainer,
   Subtitle,
   Text,
 } from '@/shared/ui'

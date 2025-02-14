@@ -3,7 +3,7 @@ export type Rating = {
   accountId: number
   productId: number
   ratingValue: number
-  comment: string
+  comment?: string
   account: Account
 }
 
