@@ -9,5 +9,6 @@ export default async function Home() {
   const products: Product[] = await fetch(`${BASE_API_URL}/product`).then(
     (res) => res.json(),
   )
+  console.log(products)
   return <MainPage products={products.slice(0, 8)} />
 }

@@ -12,6 +12,7 @@ export const MainPage: React.FC<{ products: Product[] }> = ({ products }) => {
             imageUrl={product.image.url}
             nameProduct={product.productName}
             priceProduct={product.productPrice}
+            rating={product.rating}
           />
         ))}
       </div>
