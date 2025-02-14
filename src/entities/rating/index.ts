@@ -1,5 +1,6 @@
 export type { Rating, User, Account } from './model/model'
 export { getRatingByProduct } from './api/get-rating-by-product'
+export { postRating } from './api/post-rating'
 export { RatingCard } from './ui/rating-card'
 export { RatingForm } from './ui/rating-form'
 export { RatingList } from './ui/rating-list'

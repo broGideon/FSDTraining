@@ -1,16 +1,28 @@
 'use client'
 
-import { Button, EmptyButton, StarIcon, Subtitle } from '@/shared/ui'
-import { useState } from 'react'
+import { Button, EmptyButton, StarIcon, Subtitle, Text } from '@/shared/ui'
+import React, { useState } from 'react'
+import { postRating, Rating } from '@/entities/rating'
 
-export const RatingForm = () => {
+interface Props {
+  addRating: (rating: Rating) => void
+  productId: number
+}
+
+export const RatingForm: React.FC<Props> = ({ addRating, productId }) => {
   const [rating, setRating] = useState<number>(0)
-  const [comment, setComment] = useState<
-    string | number | readonly string[] | undefined
-  >(undefined)
+  const [comment, setComment] = useState<string | undefined>(undefined)
+  const [error, setError] = useState<string | null>(null)
 
-  const handleSubmit = () => {
-  
+  const handleSubmit = async () => {
+    try {
+      setError(null)
+      const newRating = await postRating(productId, rating, comment)
+      addRating(newRating)
+    } catch (ex) {
+      console.error(ex)
+      setError('Ошибка добавления отзыва')
+    }
   }
 
   return (
@@ -50,7 +62,8 @@ export const RatingForm = () => {
             rows={4}
           />
         </div>
-        <Button>Отправить отзыв</Button>
+        {error && <Text className="text-red-500 mt-2">{error}</Text>}
+        <Button onClick={handleSubmit}>Отправить отзыв</Button>
       </form>
     </div>
   )
