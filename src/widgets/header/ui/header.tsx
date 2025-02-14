@@ -1,7 +1,15 @@
+'use client'
+
 import { LINKS } from '@/widgets/header/config/constants'
-import { Button, Container, CustomLink } from '@/shared/ui'
+import { Button, Container, CustomLink, Modal } from '@/shared/ui'
+import { useState } from 'react'
+import { Auth } from '@/entities/auth'
 
 export const Header = () => {
+  const [modalOpen, setModalOpen] = useState<boolean>(false)
+  const onClose = () => {
+    setModalOpen(false)
+  }
   return (
     <header className="bg-secondary-background">
       <Container>
@@ -20,9 +28,20 @@ export const Header = () => {
               </CustomLink>
             ))}
           </nav>
-          <Button>Войти</Button>
+          <Button
+            onClick={() => {
+              setModalOpen(true)
+            }}
+          >
+            Войти
+          </Button>
         </div>
       </Container>
+      {modalOpen && (
+        <Modal onClose={onClose}>
+          <Auth />
+        </Modal>
+      )}
     </header>
   )
 }
