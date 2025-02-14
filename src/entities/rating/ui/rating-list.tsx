@@ -1,7 +1,7 @@
 import { Rating, RatingCard } from '@/entities/rating'
 
 interface Props {
-  ratings?: Array<Rating>
+  ratings: Rating[] | null
 }
 
 export const RatingList: React.FC<Props> = ({ ratings }) => {
