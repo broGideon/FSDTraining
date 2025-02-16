@@ -7,7 +7,7 @@ export const postRating = async (
 ): Promise<Rating> => {
   const response = await fetch(`/api/proxy/rating`, {
     method: 'POST',
-    body: JSON.stringify({ productId, rating, comment }),
+    body: JSON.stringify({ productId, ratingValue: rating, comment }),
   })
   if (!response.ok) {
     throw new Error(response.statusText)

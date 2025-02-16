@@ -13,17 +13,26 @@ export const Auth = () => {
     setLoading(true)
     setError('')
 
-    const res = await fetch('/api/proxy/auth/login', {
+    // const res = await fetch(`${BASE_API_URL}/userAuth/login`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({ login, password }),
+    // })
+    const res = await fetch(`/api/auth/login`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({ login, password }),
     })
-
-    const data = await res.json()
+    const { token } = await res.json()
+    localStorage.setItem('token', token)
     setLoading(false)
 
     if (!res.ok) {
-      setError(data.error || 'Ошибка авторизации')
+      setError('Ошибка авторизации')
       return
     }
   }
@@ -31,9 +40,9 @@ export const Auth = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-6 bg-gray-100 rounded-lg shadow-md w-80"
+      className="w-80 rounded-lg bg-gray-100 p-6 shadow-md"
     >
-      <h2 className="text-xl font-bold mb-4">Вход</h2>
+      <h2 className="mb-4 text-xl font-bold">Вход</h2>
 
       {error && <p className="text-red-500">{error}</p>}
 
@@ -42,7 +51,7 @@ export const Auth = () => {
         placeholder="Логин"
         value={login}
         onChange={(e) => setLogin(e.target.value)}
-        className="w-full p-2 mb-3 border border-gray-300 rounded"
+        className="mb-3 w-full rounded border border-gray-300 p-2"
         required
       />
 
@@ -51,14 +60,14 @@ export const Auth = () => {
         placeholder="Пароль"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className="w-full p-2 mb-3 border border-gray-300 rounded"
+        className="mb-3 w-full rounded border border-gray-300 p-2"
         required
       />
 
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition"
+        className="w-full rounded bg-blue-500 py-2 text-white transition hover:bg-blue-600"
       >
         {loading ? 'Вход...' : 'Войти'}
       </button>

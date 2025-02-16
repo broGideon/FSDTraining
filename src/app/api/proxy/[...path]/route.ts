@@ -9,7 +9,6 @@ export async function POST(
   const { path } = await params
   if (!token)
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  console.log(token)
   const body = await req.json()
   const response = await fetch(`${BASE_API_URL}/${path.join('/')}`, {
     method: 'POST',
@@ -19,7 +18,18 @@ export async function POST(
     },
     body: JSON.stringify(body),
   })
-  console.log(response)
+  const data = await response.json()
+  return NextResponse.json(data)
+}
+
+export async function GET(
+  req: Request,
+  { params }: { params: Promise<{ path: string[] }> },
+) {
+  const { path } = await params
+  const response = await fetch(`${BASE_API_URL}/${path.join('/')}`, {
+    method: 'GET',
+  })
   const data = await response.json()
   return NextResponse.json(data)
 }

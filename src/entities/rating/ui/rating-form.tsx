@@ -15,18 +15,21 @@ export const RatingForm: React.FC<Props> = ({ addRating, productId }) => {
   const [error, setError] = useState<string | null>(null)
 
   const handleSubmit = async () => {
+    if (rating === 0) {
+      setError('Оценка не может быть 0')
+      return
+    }
     try {
       setError(null)
       const newRating = await postRating(productId, rating, comment)
       addRating(newRating)
     } catch (ex) {
-      console.error(ex)
       setError('Ошибка добавления отзыва')
     }
   }
 
   return (
-    <div className="rounded-lg bg-secondary-background p-4 shadow-lg">
+    <div className="mt-5 rounded-lg p-4 shadow-lg bg-secondary-background">
       <Subtitle className="mb-3">Оставьте отзыв</Subtitle>
       <form
         onSubmit={(e) => {
@@ -38,9 +41,9 @@ export const RatingForm: React.FC<Props> = ({ addRating, productId }) => {
             <EmptyButton
               key={`star-${i}`}
               color="none"
-              onClick={() => setRating(i)}
+              onClick={() => setRating(i + 1)}
             >
-              <StarIcon filled={i <= rating} />
+              <StarIcon filled={i < rating} />
             </EmptyButton>
           ))}
         </div>
@@ -62,7 +65,11 @@ export const RatingForm: React.FC<Props> = ({ addRating, productId }) => {
             rows={4}
           />
         </div>
-        {error && <Text color="danger" className="my-2">{error}</Text>}
+        {error && (
+          <Text color="danger" className="my-2">
+            {error}
+          </Text>
+        )}
         <Button onClick={handleSubmit}>Отправить отзыв</Button>
       </form>
     </div>

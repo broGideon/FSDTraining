@@ -3,6 +3,7 @@ import './globals.scss'
 import { Rubik } from 'next/font/google'
 import { Header } from '@/widgets/header/ui/header'
 import { Footer } from '@/widgets/footer/ui/footer'
+import React from 'react'
 
 export const metadata: Metadata = {
   title: 'Sofas',

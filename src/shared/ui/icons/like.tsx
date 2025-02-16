@@ -3,7 +3,7 @@ import React from 'react'
 export const LikeIcon = () => (
   <svg
     stroke="currentColor"
-    className="fill-blue-600 w-7 h-7 hover:fill-blue-600"
+    className="h-7 w-7 fill-blue-600 hover:fill-blue-600"
     fill="currentColor"
     strokeWidth="0"
     viewBox="0 0 1024 1024"

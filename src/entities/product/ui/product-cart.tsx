@@ -26,8 +26,8 @@ export const ProductCart: React.FC<Props> = ({
 }) => {
   return (
     <div className="w-[32%]">
-      <div className="border-2  rounded-md border-secondary-foreground bg-secondary-background p-4">
-        <img className="object-cover w-full h-96" src={imageUrl} />
+      <div className="rounded-md border-2 p-4 border-secondary-foreground bg-secondary-background">
+        <img className="h-96 w-full object-cover" src={imageUrl} />
         <div className="card-body">
           <StarContainer rating={rating} />
           <Subtitle>{nameProduct}</Subtitle>

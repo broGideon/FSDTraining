@@ -21,10 +21,11 @@ export const RatingComponent: React.FC<Props> = ({ productId }) => {
         const data = await getRatingByProduct(productId)
         setRatings(data)
       } catch (ex) {
-        console.error(ex)
+        /* empty */
       }
     }
-  }, [productId])
+    fetchData()
+  }, [])
 
   const addRating = useCallback((newRating: Rating) => {
     setRatings((prevState) =>
@@ -33,7 +34,7 @@ export const RatingComponent: React.FC<Props> = ({ productId }) => {
   }, [])
 
   return (
-    <div>
+    <div className="mx-auto mt-5 w-1/2">
       <RatingList ratings={ratings} />
       <RatingForm addRating={addRating} productId={productId} />
     </div>

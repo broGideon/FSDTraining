@@ -1,7 +1,7 @@
 export const VKIcon = () => (
   <svg
     stroke="currentColor"
-    className="fill-primary-foreground w-7 h-7 hover:fill-green-600"
+    className="h-7 w-7 fill-primary-foreground hover:fill-green-600"
     fill="none"
     viewBox="0 0 496 512"
     xmlns="http://www.w3.org/2000/svg"

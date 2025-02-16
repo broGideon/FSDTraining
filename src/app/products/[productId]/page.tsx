@@ -1,4 +1,4 @@
-import { ProductIdPage, generateStaticParams } from '@/pages/product-id-page'
+import { ProductIdPage, generateStaticParams } from '@/views/product-id-page'
 import { Product } from '@/entities/product'
 import { BASE_API_URL } from '@/shared/config'
 

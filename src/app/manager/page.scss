@@ -1,0 +1,52 @@
+$mainGradient:  linear-gradient(91.53deg,#6373ff -2.64%,#bb4040 107.85%);
+
+.grid-container {
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-template-columns: auto auto 1fr auto auto;
+}
+
+@keyframes rotationLeft {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotationRight {
+  from {
+    transform: rotate(0deg) translate(0, 0);
+  }
+
+  to {
+    transform: rotate(-360deg) translate(0, 0);
+  }
+}
+
+.container-loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.external {
+  //background: linear-gradient(0deg, rgb(var(--primary-background)), rgb(var(--primary-background))) padding-box, $mainGradient border-box !important;
+  //border-color: transparent !important;
+  @apply border-red-500;
+  border-radius: 100%;
+  border-radius: 100%;
+  border-left-width: 3px;
+  animation: rotationLeft 2s infinite linear;
+}
+
+.internal {
+  //background: linear-gradient(0deg, rgb(var(--primary-background)), rgb(var(--primary-background))) padding-box, $mainGradient border-box !important;
+  @apply border-purple-500;
+  border-radius: 100%;
+  border-left-width: 3px;
+  animation: rotationRight 2s infinite linear;
+}

@@ -4,7 +4,7 @@ import React from 'react'
 export const MainPage: React.FC<{ products: Product[] }> = ({ products }) => {
   return (
     <>
-      <div className="flex gap-4 py-4 justify-center flex-wrap">
+      <div className="flex flex-wrap justify-center gap-4 py-4">
         {products.map((product: Product) => (
           <ProductCart
             key={product.idProduct}

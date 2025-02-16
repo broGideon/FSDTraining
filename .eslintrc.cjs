@@ -24,7 +24,6 @@ module.exports = {
   },
   plugins: [
     'react-refresh',
-    'jsx-a11y', // Плагин для доступности
     'prettier', // Для Prettier интеграции
     'react', // Плагин для React
   ],
@@ -40,9 +39,6 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'react/jsx-uses-react': 'off', // С React 17 не требуется импортировать React для JSX
     'react/react-in-jsx-scope': 'off', // С React 17 не требуется
-    'jsx-a11y/anchor-is-valid': 'warn', // Предупреждения для доступности ссылок
-    'jsx-a11y/no-noninteractive-element-interactions': 'warn', // Предупреждения для неверного использования элементов
-    'jsx-a11y/no-static-element-interactions': 'warn', // Предупреждения для неверных элементов
     'prettier/prettier': [
       'error',
       {

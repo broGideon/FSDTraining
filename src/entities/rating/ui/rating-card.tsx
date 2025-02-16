@@ -15,13 +15,13 @@ export const RatingCard: React.FC<Props> = ({
   comment,
 }) => {
   return (
-    <div className="p-4 bg-primary-background rounded-lg shadow-lg">
+    <div className="rounded-lg p-4 shadow-lg bg-secondary-background">
       <div className="flex items-center space-x-3">
         <Subtitle>
           {firstName} {surname}
         </Subtitle>
       </div>
-      <div className="flex mt-2">
+      <div className="mt-2 flex">
         <StarContainer rating={rating} />
       </div>
       {comment && (

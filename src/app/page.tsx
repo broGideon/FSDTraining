@@ -1,4 +1,4 @@
-import { MainPage } from '@/pages/main-page'
+import { MainPage } from '@/views/main-page'
 import { BASE_API_URL } from '@/shared/config'
 import { Product } from '@/entities/product'
 
@@ -9,6 +9,5 @@ export default async function Home() {
   const products: Product[] = await fetch(`${BASE_API_URL}/product`).then(
     (res) => res.json(),
   )
-  console.log(products)
   return <MainPage products={products.slice(0, 8)} />
 }

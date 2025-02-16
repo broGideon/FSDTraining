@@ -7,7 +7,6 @@ import { RatingComponent } from '@/entities/rating'
 
 export const ProductIdPage: React.FC<Product> = ({
   idProduct,
-  productCount,
   productName,
   productPrice,
   image,
@@ -25,8 +24,8 @@ export const ProductIdPage: React.FC<Product> = ({
       <EmptyButton color="blue" onClick={handleGoBack}>
         Назад
       </EmptyButton>
-      <Title className="lg:text-3xl text-center">О товаре</Title>
-      <div className="rounded-xl bg-secondary-background mt-5 p-7 mx-auto w-fit">
+      <Title className="text-center lg:text-3xl">О товаре</Title>
+      <div className="mx-auto mt-5 w-1/2 rounded-xl p-7 bg-secondary-background">
         <img src={image.url} />
         <div className="space-y-2">
           <StarContainer rating={rating} />
